@@ -1,0 +1,3 @@
+npm uninstall create-react-app -g
+npm install create-react-app -g
+npx create-react-app myapp
