@@ -1,0 +1,10 @@
+.parentDiv {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  background-color: rgb(202, 242, 242);
+}
+
+.parentDiv h1 {
+  cursor: pointer;
+}
