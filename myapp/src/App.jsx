@@ -15,6 +15,9 @@ import PropDrilling from "./components/24-08/PropDrilling";
 import { useState } from "react";
 import Mapping from "./components/24-08/Mapping";
 import Mapping2 from "./components/24-08/Mapping2";
+import TerneryOperator from "./components/25-08/TerneryOperator";
+import StyledComponets from "./components/25-08/StyledComponets";
+import Todo from "./components/25-08/Todo";
 
 function App() {
   const [students, setStudents] = useState([
@@ -55,6 +58,9 @@ function App() {
         />
         <Route path="/mapping" element={<Mapping students={students} />} />
         <Route path="/mapping2" element={<Mapping2 />} />
+        <Route path="/ternery-operator" element={<TerneryOperator />} />
+        <Route path="/styled-components" element={<StyledComponets />} />
+        <Route path="/todo" element={<Todo />} />
       </Routes>
     </>
   );
