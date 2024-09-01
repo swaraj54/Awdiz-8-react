@@ -19,6 +19,8 @@ import TerneryOperator from "./components/25-08/TerneryOperator";
 import StyledComponets from "./components/25-08/StyledComponets";
 import Todo from "./components/25-08/Todo";
 import DynamicStyling from "./components/29-08/DynamicStyling";
+import RegisterValidation from "./components/31-08/RegisterValidation";
+import RegisterValidationEffect from "./components/31-08/RegisterValidationEffect";
 
 function App() {
   const [students, setStudents] = useState([
@@ -40,6 +42,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/register-validation" element={<RegisterValidation />} />
+        <Route path="/register-validation-useeffect" element={<RegisterValidationEffect />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/useeffect-1" element={<UseEffect1 />} />
         <Route path="/useeffect-2" element={<UseEffect2 />} />

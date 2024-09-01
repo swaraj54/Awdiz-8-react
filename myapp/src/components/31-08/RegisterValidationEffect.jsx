@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-function Register() {
+function RegisterValidationEffect() {
   const router = useNavigate();
+  const [errors, setErrors] = useState({
+    name: "Name is required.",
+    email: "Email is required.",
+    password: "Password is required.",
+    confirmPassword: "Confirm Password is required.",
+  });
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -58,6 +64,42 @@ function Register() {
   // myobject["event.target.name"] = event.target.value
   // {[event.target.name] : event.target.value}
 
+  useEffect(() => {
+    const errors = {};
+    if (userData.name) {
+      errors["name"] = "";
+      //   setErrors({ ...errors, ["name"]: "" });
+    } else {
+      errors["name"] = "Name is required.";
+      //   setErrors({ ...errors, ["name"]: "Name is required." });
+    }
+    if (userData.email) {
+      errors["email"] = "";
+      //   setErrors({ ...errors, ["email"]: "" });
+    } else {
+      errors["email"] = "Email is required.";
+      //   setErrors({ ...errors, ["email"]: "Email is required." });
+    }
+    if (userData.password) {
+      errors["password"] = "";
+      //   setErrors({ ...errors, ["password"]: "" });
+    } else {
+      errors["password"] = "Password is required.";
+      //   setErrors({ ...errors, ["password"]: "Password is required." });
+    }
+    if (userData.confirmPassword) {
+      errors["confirmPassword"] = "";
+      //   setErrors({ ...errors, ["confirmPassword"]: "" });
+    } else {
+      errors["confirmPassword"] = "Confirm Password is required.";
+      //   setErrors({
+      //     ...errors,
+      //     ["confirmPassword"]: "Confirm Password is required.",
+      //   });
+    }
+    setErrors(errors);
+  }, [userData]);
+
   return (
     <div>
       <h1>Register</h1>
@@ -71,6 +113,7 @@ function Register() {
           name="name"
           required
         />
+        {errors?.name && <p>{errors?.name}</p>}
         <br />
         <label>Email</label>
         <br />
@@ -81,6 +124,7 @@ function Register() {
           name="email"
           required
         />
+        {errors?.email && <p>{errors?.email}</p>}
         <br />
         <label>Password </label>
         <br />
@@ -91,6 +135,7 @@ function Register() {
           name="password"
           required
         />
+        {errors?.password && <p>{errors?.password}</p>}
         <br />
         <label>Confirm Password </label>
         <br />
@@ -101,10 +146,12 @@ function Register() {
           name="confirmPassword"
           required
         />
+        {errors?.confirmPassword && <p>{errors?.confirmPassword}</p>}
         <br />
         <input type="submit" value="Register" />
       </form>
     </div>
   );
 }
-export default Register;
+
+export default RegisterValidationEffect;
