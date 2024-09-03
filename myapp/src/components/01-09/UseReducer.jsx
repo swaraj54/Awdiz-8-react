@@ -6,17 +6,17 @@ function Reducer(state, action) {
   // state = { counter: 100 }
   switch (action.type) {
     case "INCREMENT":
-      return { counter: state.counter + 1 };
+      return { ...state, counter: state.counter + 1 };
     case "DECREMENT":
-      return { counter: state.counter - 1 };
+      return { ...state, counter: state.counter - 1 };
     case "RESET":
-      return { counter: 100 };
+      return { ...state, counter: 100 };
     default:
       return state;
   }
 }
 
-const InitialState = { counter: 100 };
+const InitialState = { counter: 100, user: null };
 
 const UseReducer = () => {
   const [state, dispatch] = useReducer(Reducer, InitialState);

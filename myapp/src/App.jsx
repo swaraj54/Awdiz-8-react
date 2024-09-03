@@ -22,6 +22,7 @@ import DynamicStyling from "./components/29-08/DynamicStyling";
 import RegisterValidation from "./components/31-08/RegisterValidation";
 import RegisterValidationEffect from "./components/31-08/RegisterValidationEffect";
 import UseReducer from "./components/01-09/UseReducer";
+import UseContext from "./components/03-09/UseContext";
 
 function App() {
   const [students, setStudents] = useState([
@@ -72,6 +73,7 @@ function App() {
         <Route path="/todo" element={<Todo />} />
         <Route path="/dynamic-styling" element={<DynamicStyling />} />
         <Route path="/use-reducer" element={<UseReducer />} />
+        <Route path="/use-context" element={<UseContext />} />
       </Routes>
     </div>
   );
