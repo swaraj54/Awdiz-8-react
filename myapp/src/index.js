@@ -6,6 +6,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import ParentAuthComponent from "./components/context/AuthContext";
+import ParentComponetForDarkModeContext from "./components/05-09-context/DarkModeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -36,9 +37,11 @@ root.render(
           },
         }}
       />
-      <ParentAuthComponent>
-        <App />
-      </ParentAuthComponent>
+      <ParentComponetForDarkModeContext>
+        <ParentAuthComponent>
+          <App />
+        </ParentAuthComponent>
+      </ParentComponetForDarkModeContext>
     </BrowserRouter>
   </React.StrictMode>
 );
