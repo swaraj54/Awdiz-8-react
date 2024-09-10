@@ -24,6 +24,8 @@ import RegisterValidationEffect from "./components/31-08/RegisterValidationEffec
 import UseReducer from "./components/01-09/UseReducer";
 import UseContext from "./components/03-09/UseContext";
 import UseMemo from "./components/05-09-context/UseMemo";
+import UseMemo2 from "./components/10-09/UseMemo2";
+import Memo from "./components/10-09/Memo";
 
 function App() {
   const [students, setStudents] = useState([
@@ -76,6 +78,8 @@ function App() {
         <Route path="/use-reducer" element={<UseReducer />} />
         <Route path="/use-context" element={<UseContext />} />
         <Route path="/use-memo" element={<UseMemo />} />
+        <Route path="/use-memo-2" element={<UseMemo2 />} />
+        <Route path="/memo" element={<Memo />} />
       </Routes>
     </div>
   );
