@@ -4,6 +4,10 @@ import "../styles/Navbar.css";
 function Navbar() {
   const router = useNavigate();
 
+  function redirectToProducts() {
+    router("/all-products");
+  }
+
   function redirectToHome() {
     // alert("Hi from function");
     router("/");
@@ -18,6 +22,7 @@ function Navbar() {
   return (
     <div className="parentDiv">
       <h1 onClick={redirectToHome}>Home</h1>
+      <h1 onClick={redirectToProducts}>Products</h1>
       <h1 onClick={redirectToLogin}>Login</h1>
       <h1 onClick={redirectToRegister}>Register</h1>
     </div>

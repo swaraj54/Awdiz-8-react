@@ -15,7 +15,7 @@ const Reducer = (state, action) => {
   }
 };
 
-const InitialState = { mode: "light" };
+const InitialState = { mode: "light", user: null };
 
 const ParentComponetForDarkModeContext = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, InitialState);

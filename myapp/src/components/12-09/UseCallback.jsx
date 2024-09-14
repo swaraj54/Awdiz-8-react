@@ -4,12 +4,12 @@ import Todos from "./Todos";
 const UseCallback = () => {
   const [counter, setCounter] = useState(1); // 2
   const [todos, setTodos] = useState([]);
-  const AddNewTodo = () => {
+  // const AddNewTodo = () => {
+  //   setTodos([...todos, "My new todo."]);
+  // };
+  const AddNewTodo = useCallback(() => {
     setTodos([...todos, "My new todo."]);
-  };
-  //   const AddNewTodo = useCallback(() => {
-  //     setTodos([...todos, "My new todo."]);
-  //   }, [todos]);
+  }, [todos]);
   //   console.log("Parent component re-rendered.");
   return (
     <div>
