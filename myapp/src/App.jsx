@@ -28,6 +28,7 @@ import UseMemo2 from "./components/10-09/UseMemo2";
 import Memo from "./components/10-09/Memo";
 import UseCallback from "./components/12-09/UseCallback";
 import AllProducts from "./components/14-09/AllProducts";
+import UseRef from "./components/15-09/UseRef";
 
 function App() {
   const [students, setStudents] = useState([
@@ -84,6 +85,7 @@ function App() {
         <Route path="/memo" element={<Memo />} />
         <Route path="/use-callback" element={<UseCallback />} />
         <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/use-ref" element={<UseRef />} />
       </Routes>
     </div>
   );

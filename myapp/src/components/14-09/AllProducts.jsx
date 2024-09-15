@@ -44,7 +44,7 @@ const AllProducts = () => {
               <img
                 style={{ width: "100%", height: "60%" }}
                 src={product.image}
-                alt={product.name}
+                alt={product.title}
               />
               <h2>Name {product.title}</h2>
               <h3>Price {product.price}</h3>
