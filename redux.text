@@ -1,0 +1,6 @@
+1. install packages
+2. create actionstype and actions
+3. create reducer with initialSTATE 
+4. create store with configureStore
+5. add store in index.js
+6. now use hooks to access state and dispatch
