@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DarkModeContext } from "./05-09-context/DarkModeContext";
 function Login() {
   const { state, dispatch } = useContext(DarkModeContext);
@@ -8,7 +8,13 @@ function Login() {
     } else {
       dispatch({ type: "LIGHTMODE" });
     }
+    // const response = {username :'swaraj54', url:"http"} 
+    // successfully login dispatch({type : "LOGIN", pyalod : {username :'swaraj54'}})
+    // 1. store data in cookies -> backend
+    // 2. store userdata in context state
   };
+
+
   return (
     <>
       <p>Current Theme - {state.mode}</p>
@@ -20,6 +26,7 @@ function Login() {
       >
         Login
       </h1>
+      {state?.user?.username}
       <button onClick={ChangeTheme}>Change Theme Mode </button>
     </>
   );

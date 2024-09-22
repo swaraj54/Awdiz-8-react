@@ -12,40 +12,40 @@ import store from "./components/redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          gutter={8}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            // Define default options
-            className: "",
-            duration: 5000,
-            style: {
-              background: "#363636",
-              color: "#fff",
-            },
+  // <React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
 
-            // Default options for specific types
-            success: {
-              duration: 3000,
-              theme: {
-                primary: "green",
-                secondary: "black",
-              },
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            theme: {
+              primary: "green",
+              secondary: "black",
             },
-          }}
-        />
-        <ParentComponetForDarkModeContext>
-          <ParentAuthComponent>
-            <App />
-          </ParentAuthComponent>
-        </ParentComponetForDarkModeContext>
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+          },
+        }}
+      />
+      <ParentComponetForDarkModeContext>
+        <ParentAuthComponent>
+          <App />
+        </ParentAuthComponent>
+      </ParentComponetForDarkModeContext>
+    </BrowserRouter>
+  </Provider>
+  // </React.StrictMode>
 );

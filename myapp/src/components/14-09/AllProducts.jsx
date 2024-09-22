@@ -1,8 +1,13 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const AllProducts = () => {
+  const router = useNavigate();
+  const { state } = useContext(AuthContext);
+  console.log(state, "state");
   const [products, setProducts] = useState([]);
   console.log(products, "products");
   async function getAllProducts() {
@@ -20,7 +25,14 @@ const AllProducts = () => {
     // toast("Welcome");
     // api call -> return products
     // getAllProducts();
-  }, []);
+
+    if (state && state?.user?.userId) {
+      alert("Got state");
+    } else {
+      router("/login");
+      alert("No state");
+    }
+  }, [state]);
   return (
     <div>
       {products?.length ? (

@@ -12,7 +12,7 @@ import UseEffect3 from "./components/23-08/UseEffect3";
 import UseEffect4 from "./components/23-08/UseEffect4";
 import UseParams from "./components/24-08/UseParams";
 import PropDrilling from "./components/24-08/PropDrilling";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Mapping from "./components/24-08/Mapping";
 import Mapping2 from "./components/24-08/Mapping2";
 import TerneryOperator from "./components/25-08/TerneryOperator";
@@ -30,8 +30,14 @@ import UseCallback from "./components/12-09/UseCallback";
 import AllProducts from "./components/14-09/AllProducts";
 import UseRef from "./components/15-09/UseRef";
 import ReduxCounter from "./components/19-09/ReduxCounter";
+import { AuthContext } from "./components/context/AuthContext";
+import Movies from "./components/Movies/index";
 
 function App() {
+  const { state } = useContext(AuthContext);
+  // admin, users, superadmin , etc etc
+  const userExists = state?.user?.userId;
+  const userRole = state?.user?.role;
   const [students, setStudents] = useState([
     "virat",
     "rohit",
@@ -51,7 +57,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/register-validation" element={<RegisterValidation />} />
+        {userRole == "admin" && (
+          <Route path="/all-products" element={<AllProducts />} />
+        )}
+        {userExists && (
+          <Route path="/register-validation" element={<RegisterValidation />} />
+        )}
         <Route
           path="/register-validation-useeffect"
           element={<RegisterValidationEffect />}
@@ -85,9 +96,9 @@ function App() {
         <Route path="/use-memo-2" element={<UseMemo2 />} />
         <Route path="/memo" element={<Memo />} />
         <Route path="/use-callback" element={<UseCallback />} />
-        <Route path="/all-products" element={<AllProducts />} />
         <Route path="/use-ref" element={<UseRef />} />
         <Route path="/redux-counter" element={<ReduxCounter />} />
+        <Route path="/movies" element={<Movies />} />
       </Routes>
     </div>
   );
