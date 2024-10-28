@@ -18,7 +18,7 @@ const Reducer = (state, action) => {
 };
 
 const InitialState = {
-  user: { userId: "ftgyu3h4i35465766453", role: "superadmin" },
+  user: null,
   counter: 101,
 };
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import api from "./axiosConfig";
 
 function Register() {
   const router = useNavigate();
@@ -31,18 +32,17 @@ function Register() {
         return toast.error("Passqword and confirm password not macthed.");
       }
       try {
-        // const response = await axios.post(
-        //   "http://localhost:8000/api/v1/auth/register",
-        //   { userData }
-        // );
-        const response = {
-          data: { success: true, message: "Register succesfulyy comp;leted." },
-        };
+        let response = await api.post("/auth/register", { userData });
+        // response = {
+        //   data: { success: true, message: "Register succesfulyy comp;leted." },
+        // };
         if (response.data.success) {
           // console.log(response);
           // alert(response.data.message);
           toast.success(response.data.message);
           router("/login");
+        } else {
+          toast.error(response.data.message);
         }
       } catch (error) {
         console.log(error);

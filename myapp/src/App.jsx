@@ -49,6 +49,7 @@ function App() {
   function Increment() {
     setCounter(counter + 1);
   }
+
   return (
     <div className="App">
       <Navbar />
