@@ -31,7 +31,7 @@ function Login() {
         if (response.data.success) {
           // console.log(response);
           // alert(response.data.message);
-          dispatch({type : "LOGIN" , payload : response.data.userData  });
+          dispatch({ type: "LOGIN", payload: response.data.userData });
           toast.success(response.data.message);
           router("/");
         } else {

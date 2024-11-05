@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import api from "../axiosConfig";
 
 export const AuthContext = createContext();
 
@@ -28,6 +29,22 @@ function ParentAuthComponent({ children }) {
   const [state, dispatch] = useReducer(Reducer, InitialState);
 
   //useeffect to detech refresh behaviour
+  useEffect(() => {
+    // alert("Page refreshed.");
+    async function getCurrentUser() {
+      try {
+        const response = await api.post("/auth/get-current-user");
+        console.log(response.data,"data in get current user")
+        if (response.data.success) {
+          dispatch({ type: "LOGIN", payload: response.data.userData });
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getCurrentUser();
+  }, []);
+
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
       {children}
