@@ -39,7 +39,7 @@ function Login() {
         }
       } catch (error) {
         console.log(error);
-        toast.error(error);
+        toast.error(error.response.data.message);
       }
     } else {
       toast.error("All fields are required.");

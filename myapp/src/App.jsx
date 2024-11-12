@@ -32,6 +32,8 @@ import UseRef from "./components/15-09/UseRef";
 import ReduxCounter from "./components/19-09/ReduxCounter";
 import { AuthContext } from "./components/context/AuthContext";
 import Movies from "./components/Movies/index";
+import ViewProducts from "./components/12-11/ViewProducts";
+import CreateProduct from "./components/12-11/CreateProduct";
 
 function App() {
   const { state } = useContext(AuthContext);
@@ -100,6 +102,10 @@ function App() {
         <Route path="/use-ref" element={<UseRef />} />
         <Route path="/redux-counter" element={<ReduxCounter />} />
         <Route path="/movies" element={<Movies />} />
+
+        
+        <Route path="/create-product" element={<CreateProduct />} />
+        <Route path="/view-products" element={<ViewProducts />} />
       </Routes>
     </div>
   );
