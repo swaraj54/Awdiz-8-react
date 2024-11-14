@@ -34,6 +34,7 @@ import { AuthContext } from "./components/context/AuthContext";
 import Movies from "./components/Movies/index";
 import ViewProducts from "./components/12-11/ViewProducts";
 import CreateProduct from "./components/12-11/CreateProduct";
+import SingleProduct from "./components/14-11/SingleProduct";
 
 function App() {
   const { state } = useContext(AuthContext);
@@ -75,7 +76,7 @@ function App() {
         <Route path="/useeffect-2" element={<UseEffect2 />} />
         <Route path="/useeffect-3" element={<UseEffect3 />} />
         <Route path="/useeffect-4" element={<UseEffect4 />} />
-        <Route path="/product/:id" element={<UseParams />} />
+        {/* <Route path="/product/:id" element={<UseParams />} /> */}
         <Route
           path="/props"
           element={
@@ -103,9 +104,9 @@ function App() {
         <Route path="/redux-counter" element={<ReduxCounter />} />
         <Route path="/movies" element={<Movies />} />
 
-        
         <Route path="/create-product" element={<CreateProduct />} />
         <Route path="/view-products" element={<ViewProducts />} />
+        <Route path="/product/:productId" element={<SingleProduct />} />
       </Routes>
     </div>
   );
