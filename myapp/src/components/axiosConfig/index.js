@@ -1,11 +1,11 @@
 import axios from "axios";
 
-let currentMode = "LOCAL"; // process.env.mode
+let currentMode = "PROD"; // process.env.mode
 let currentBackendUrl = "";
 if (currentMode == "PROD") {
-  currentBackendUrl = "http://prod:8000/api/v1";
+  currentBackendUrl = "https://awdiz-8th-batch-backend.onrender.com/api/v1";
 } else if (currentMode == "NONPROD") {
-  currentBackendUrl = "http://nonprod:8000/api/v1";
+  currentBackendUrl = "https://awdiz-8th-batch-backend.onrender.com/api/v1";
 } else {
   currentBackendUrl = "http://localhost:8000/api/v1";
 }
