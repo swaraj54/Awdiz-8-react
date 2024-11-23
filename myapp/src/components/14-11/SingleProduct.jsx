@@ -39,6 +39,7 @@ const SingleProduct = () => {
         <img style={{ width: "100%", height: "60%" }} src={productData.image} />
         <h2>Name: {productData.name}</h2>
         <h3>Price: {productData.price}/-</h3>
+        <button>Add to cart</button>
       </div>
     </div>
   );
